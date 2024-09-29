@@ -1,0 +1,19 @@
+cd test_repozitory
+mkdir my_repo
+git init
+touch main.txt
+echo "Hello, Git!">main.txt
+git add main.txt
+git commit -m "Мой первый коммит"
+touch will_be_moved.txt will_be_deleted.txt
+echo "I will be moved" > will_be_moved.txt
+echo "I will be deleted" > will_be_deleted.txt
+git add will_be_moved.txt will_be_deleted.txt
+git commit -m "Скоро удалю и перемещу"
+rm will_be_deleted.txt
+mkdir app
+mv will_be_moved.txt app/
+git add app/will_be_moved.txt
+git rm will_be_deleted.txt
+git commit -m "Перемещено и удалено"
+git log --oneline
